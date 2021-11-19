@@ -1,0 +1,50 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /notification-management
+application:
+  id: NOTIFICATION-MANAGEMENT
+  moduleOperation:
+    notificationManagement: /notification-management
+spring:
+  datasource:
+      jdbcUrl: jdbc:mysql://localhost:3306/yoin
+      username: '{cipher}71dd79e2debe574b3f2f1b27b482d5fa91f216d4d9f07b99a2fb72133f78cb62'
+      password: '{cipher}b48b79c326ef8e5fc66a66b9fb72a6e72680d4a0e886033dbdf1fbf517a595e4'
+      driverClassName: org.mariadb.jdbc.Driver
+
+  jpa:
+      show-sql: false
+      open-in-view: false
+      properties:
+         hibernate:
+            format_sql: true
+            jdbc:
+               time_zone: UTC
+
+jdbc: 
+   acquireIncrement: 5
+   minPoolSize: 5
+   maxPoolSize: 20
+   maxIdleTime: 20
+   unreturnedConnectionTimeout: 300
+     
+hibernate:
+   show_sql: false
+   format_sql: false
+   dialect: org.hibernate.dialect.MySQLDialect
+   hbm2ddl:
+      auto: validate
+   connection:
+      provider_class: org.hibernate.connection.C3P0ConnectionProvider
+   c3p0:
+      acquire_increment: 1
+   
+sendgrid:
+   api:
+      key: '{cipher}aa37ce9ee4e2e610e247ba8f691ec22bcd3730673f6d3ed61ebc3b2a0f9a67b1a1fdafc28b2f7557e546adeb7353a35e0ccf1b0029ba0b8b79603f16557be19befbe3032a7609e039ea76d9fd00a7470954f6003a8a94fdeba9b511e55084d67'
+
+notification:
+   email:
+      sender-mail: admin.devops@proa.com.mx
+      sender-name: TEST - PROA
